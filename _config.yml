@@ -1,0 +1,42 @@
+title: InfyniPay
+description: Payment infrastructure for modern businesses. InfyniPay delivers enterprise-grade payment technology to companies across Europe and beyond.
+url: "https://www.infynipay.com"
+baseurl: ""
+lang: en
+author: InfyniPay B.V.
+
+# SEO
+logo: /assets/images/logo.png
+twitter:
+  card: summary_large_image
+social:
+  name: InfyniPay
+  links:
+    - https://www.linkedin.com/company/infynipay
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/og-image.png
+
+# Build
+markdown: kramdown
+highlighter: rouge
+
+sass:
+  style: compressed
+  quiet_deps: true
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .gitignore
+
+safe: true

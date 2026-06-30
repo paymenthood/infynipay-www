@@ -1,0 +1,66 @@
+@use 'variables' as *;
+
+// ── Feature card ─────────────────────────────────────────────────────────────
+.feat-card {
+  background: $bg-card;
+  border: 1px solid $border;
+  border-radius: $radius-lg;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color $dur $ease, transform $dur $ease, box-shadow $dur $ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(29,106,255,.04) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity $dur $ease;
+    pointer-events: none;
+  }
+
+  &:hover {
+    border-color: $border-h;
+    transform: translateY(-4px);
+    box-shadow: $glow, 0 20px 60px rgba(0,0,0,0.3);
+
+    &::before { opacity: 1; }
+  }
+
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: $radius-md;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    background: rgba(29, 106, 255, 0.1);
+    border: 1px solid rgba(29, 106, 255, 0.22);
+    transition: transform $dur $ease;
+  }
+
+  &:hover .card-icon { transform: scale(1.08) rotate(-4deg); }
+
+  .card-icon--blue   { background: rgba(29,106,255,.1);  border-color: rgba(29,106,255,.22); }
+  .card-icon--light  { background: rgba(77,141,255,.1);  border-color: rgba(77,141,255,.22); }
+  .card-icon--pale   { background: rgba(147,197,253,.1); border-color: rgba(147,197,253,.22); }
+  .card-icon--gold   { background: rgba(245,158,11,.1);  border-color: rgba(245,158,11,.2); }
+  .card-icon--green  { background: rgba(16,185,129,.1);  border-color: rgba(16,185,129,.2); }
+  .card-icon--navy   { background: rgba(18,73,204,.15);  border-color: rgba(18,73,204,.28); }
+
+  h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.625rem;
+    color: $text;
+  }
+
+  p {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: $text-muted;
+    margin: 0;
+  }
+}

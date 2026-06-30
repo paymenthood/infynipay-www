@@ -1,0 +1,152 @@
+@use 'variables' as *;
+
+.site-header {
+  position: fixed;
+  top: 0;
+  inset-inline: 0;
+  z-index: 100;
+  padding: 1.25rem 0;
+  transition: background $dur $ease, box-shadow $dur $ease, padding $dur $ease;
+
+  &.scrolled {
+    background: rgba(7, 16, 31, 0.90);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 1px 0 $border;
+    padding: 0.875rem 0;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+// ── Logo ─────────────────────────────────────────────────────────────────────
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  text-decoration: none;
+
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+    background: $gradient;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-head;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(29, 106, 255, 0.45);
+    flex-shrink: 0;
+    letter-spacing: -0.03em;
+  }
+
+  .logo-text {
+    font-family: $font-head;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: $text;
+    letter-spacing: -0.03em;
+
+    // "Pay" in brand blue — matches the wordmark exactly
+    .logo-pay { color: $brand-blue; }
+  }
+}
+
+// ── Nav ──────────────────────────────────────────────────────────────────────
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: auto;
+
+  a {
+    font-family: $font-head;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: $text-muted;
+    padding: 0.5rem 0.875rem;
+    border-radius: $radius-sm;
+    transition: color $dur $ease, background $dur $ease;
+
+    &:hover, &.active {
+      color: $text;
+      background: rgba(29, 106, 255, 0.08);
+    }
+  }
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: $gradient;
+  color: #fff !important;
+  font-weight: 600 !important;
+  padding: 0.5rem 1.25rem !important;
+  border-radius: 100px !important;
+  font-size: 0.875rem !important;
+  margin-left: 0.75rem;
+  &:hover {
+    background: $gradient-h !important;
+  }
+
+  .ext-icon { font-size: 0.75rem; opacity: 0.8; }
+}
+
+// ── Mobile hamburger ─────────────────────────────────────────────────────────
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 4px;
+  background: none;
+  border: none;
+
+  span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: $text;
+    border-radius: 2px;
+    transition: transform $dur $ease, opacity $dur $ease;
+  }
+
+  &.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  &.open span:nth-child(2) { opacity: 0; }
+  &.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+}
+
+// ── Mobile menu ──────────────────────────────────────────────────────────────
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; }
+
+  .site-nav {
+    position: fixed;
+    inset: 0 0 0 auto;
+    width: min(320px, 85vw);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    padding: 5rem 1.5rem 2rem;
+    background: $bg-surface;
+    border-left: 1px solid $border;
+    transform: translateX(100%);
+    transition: transform 0.35s $ease;
+    margin-left: 0;
+
+    &.open { transform: none; }
+
+    a { font-size: 1rem; width: 100%; }
+    .nav-cta { width: 100%; justify-content: center; margin-left: 0; margin-top: 0.5rem; }
+  }
+}

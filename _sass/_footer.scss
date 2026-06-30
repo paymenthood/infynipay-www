@@ -1,0 +1,92 @@
+@use 'variables' as *;
+
+.site-footer {
+  border-top: 1px solid $border;
+  padding: $sp-2xl 0 $sp-lg;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: $sp-xl;
+  border-bottom: 1px solid $border;
+
+  @media (max-width: 760px) { grid-template-columns: 1fr 1fr; }
+  @media (max-width: 480px) { grid-template-columns: 1fr; }
+}
+
+.footer-brand {
+  .site-logo { margin-bottom: 1.25rem; }
+
+  p {
+    font-size: 0.875rem;
+    line-height: 1.75;
+    max-width: 260px;
+  }
+
+  .footer-address {
+    margin-top: 1.25rem;
+    font-size: 0.8rem;
+    color: $text-dim;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    line-height: 1.6;
+
+    .addr-icon { margin-top: 1px; flex-shrink: 0; }
+  }
+}
+
+.footer-col {
+  .col-title {
+    font-family: $font-head;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $text;
+    margin-bottom: 1.25rem;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  a {
+    font-size: 0.875rem;
+    color: $text-muted;
+    transition: color $dur $ease;
+
+    &:hover { color: $violet; }
+  }
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  p { font-size: 0.8rem; color: $text-dim; margin: 0; }
+
+  .footer-legal-links {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      font-size: 0.8rem;
+      color: $text-dim;
+      transition: color $dur $ease;
+
+      &:hover { color: $violet; }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+// ─── InfyniPay Design Tokens ────────────────────────────────────────────────
+// Brand: dark navy (#0d1b3e) + bright royal blue (#1d6aff)
+// Matches the official InfyniPay wordmark: "Infyni" navy, "Pay" bright blue.
+
+// Backgrounds
+$bg:          #07101f;   // near-black navy
+$bg-surface:  #0b1828;
+$bg-card:     #0f2040;
+$bg-card-alt: #122345;
+
+// Brand palette
+$purple:   #1d6aff;   // InfyniPay primary blue ("Pay" colour)
+$violet:   #4d8dff;   // medium blue (highlights)
+$pink:     #93c5fd;   // pale blue (subtle accents)
+$gradient: linear-gradient(135deg, #1249cc 0%, #1d6aff 100%);
+$gradient-h: linear-gradient(135deg, #1d6aff 0%, #4d8dff 100%);
+
+// InfyniPay logo two-tone references
+$brand-navy:  #0d1b3e;   // "Infyni" dark navy
+$brand-blue:  #1d6aff;   // "Pay" bright blue
+
+// UI tones
+$gold:     #f59e0b;
+$gold-dark: #d97706;
+$green:    #10b981;
+$border:   rgba(29, 106, 255, 0.15);
+$border-h: rgba(29, 106, 255, 0.32);
+$glow:     0 0 40px rgba(29, 106, 255, 0.22);
+
+// Text
+$text:       #eef4ff;
+$text-muted: rgba(238, 244, 255, 0.58);
+$text-dim:   rgba(238, 244, 255, 0.32);
+
+// Typography
+$font-head: 'Space Grotesk', system-ui, sans-serif;
+$font-body: 'Inter', system-ui, sans-serif;
+
+// Spacing scale
+$sp-xs:  0.5rem;
+$sp-sm:  1rem;
+$sp-md:  1.5rem;
+$sp-lg:  2.5rem;
+$sp-xl:  4rem;
+$sp-2xl: 6rem;
+$sp-3xl: 9rem;
+
+// Radius
+$radius-sm: 8px;
+$radius-md: 16px;
+$radius-lg: 24px;
+$radius-xl: 40px;
+
+// Transitions
+$ease: cubic-bezier(0.4, 0, 0.2, 1);
+$dur:  0.28s;

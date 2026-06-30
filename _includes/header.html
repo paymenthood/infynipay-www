@@ -1,0 +1,20 @@
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="{{ '/' | relative_url }}" class="site-logo" aria-label="InfyniPay home">
+      <span class="logo-text">Infyni<span class="logo-pay">Pay</span></span>
+    </a>
+
+    <button class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Open navigation">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a href="{{ '/' | relative_url }}"{% if page.nav_active == 'home' %} class="active"{% endif %}>Home</a>
+      <a href="{{ '/about/' | relative_url }}"{% if page.nav_active == 'about' %} class="active"{% endif %}>About</a>
+      <a href="{{ '/contact/' | relative_url }}"{% if page.nav_active == 'contact' %} class="active"{% endif %}>Contact</a>
+      <a href="https://www.paymenthood.com" target="_blank" rel="noopener" class="nav-cta">
+        Try PaymentHood <span class="ext-icon" aria-hidden="true">↗</span>
+      </a>
+    </nav>
+  </div>
+</header>

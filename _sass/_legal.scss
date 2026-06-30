@@ -1,0 +1,86 @@
+@use 'variables' as *;
+
+// ── Legal page header ─────────────────────────────────────────────────────────
+.legal-header {
+  padding-top: 10rem;
+  padding-bottom: $sp-xl;
+  position: relative;
+  text-align: center;
+
+  h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .legal-meta {
+    font-size: 0.875rem;
+    color: $text-dim;
+    margin-top: 0.5rem;
+  }
+}
+
+// ── Legal prose ───────────────────────────────────────────────────────────────
+.legal-body {
+  max-width: 780px;
+  margin-inline: auto;
+  padding-bottom: $sp-3xl;
+
+  h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: $text;
+    margin-top: 3rem;
+    margin-bottom: 0.875rem;
+    padding-bottom: 0.625rem;
+    border-bottom: 1px solid $border;
+  }
+
+  h3 {
+    font-size: 0.97rem;
+    font-weight: 600;
+    color: $text;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: $text-muted;
+    margin-bottom: 1.25rem;
+  }
+
+  ul, ol {
+    margin-bottom: 1.25rem;
+    padding-left: 1.75rem;
+
+    li {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      color: $text-muted;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  a {
+    color: $violet;
+    text-decoration: underline;
+    text-decoration-color: rgba(77, 141, 255, 0.35);
+    transition: color $dur $ease;
+
+    &:hover { color: $brand-blue; }
+  }
+
+  strong { color: $text; font-weight: 600; }
+
+  .legal-highlight {
+    background: rgba(29, 106, 255, 0.06);
+    border: 1px solid rgba(29, 106, 255, 0.2);
+    border-radius: $radius-md;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+
+    p { margin-bottom: 0; font-size: 0.9rem; }
+    strong { color: $violet; }
+  }
+}
