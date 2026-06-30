@@ -18,7 +18,7 @@
   position: relative;
   z-index: 2;
 
-  @media (max-width: 900px) {
+  @media (max-width: 960px) {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 3rem;
@@ -57,7 +57,7 @@
 }
 
 .hero__title {
-  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-size: clamp(2rem, 6vw, 5rem);
   font-weight: 800;
   line-height: 1.08;
   letter-spacing: -0.04em;
@@ -72,7 +72,8 @@
   max-width: 500px;
   margin-bottom: 2.5rem;
 
-  @media (max-width: 900px) { margin-inline: auto; }
+  @media (max-width: 960px) { margin-inline: auto; }
+  @media (max-width: 480px) { font-size: 1rem; }
 }
 
 .hero__actions {
@@ -81,7 +82,7 @@
   gap: 1rem;
   flex-wrap: wrap;
 
-  @media (max-width: 900px) { justify-content: center; }
+  @media (max-width: 960px) { justify-content: center; }
 }
 
 // ── Visual ───────────────────────────────────────────────────────────────────
@@ -170,6 +171,10 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-bottom: 1px solid rgba(29,106,255,.1);
+
+  @media (max-width: 500px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .dash-kpi {
@@ -177,6 +182,12 @@
   border-right: 1px solid rgba(29,106,255,.1);
 
   &:last-child { border-right: none; }
+
+  @media (max-width: 500px) {
+    &:nth-child(2) { border-right: none; }
+    &:nth-child(3) { border-top: 1px solid rgba(29,106,255,.1); }
+    &:nth-child(4) { border-top: 1px solid rgba(29,106,255,.1); border-right: none; }
+  }
 
   .kpi-label {
     display: flex;
@@ -225,6 +236,11 @@
 }
 
 // Provider performance table
+.dash-section-title,
+.dash-provider-table {
+  @media (max-width: 500px) { display: none; }
+}
+
 .dash-section-title {
   font-family: $font-head;
   font-size: 0.68rem;

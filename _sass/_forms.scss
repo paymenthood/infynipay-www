@@ -1,7 +1,12 @@
 @use 'variables' as *;
 
 .contact-section {
+  padding-top: 10rem;
+  padding-bottom: $sp-3xl;
+  position: relative;
   .section-label { margin-bottom: $sp-xl; }
+
+  @media (max-width: 768px) { padding-top: 7rem; padding-bottom: $sp-2xl; }
 }
 
 .contact-grid {
