@@ -25,39 +25,41 @@
 
 // ── Logo ─────────────────────────────────────────────────────────────────────
 .site-logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
   flex-shrink: 0;
   text-decoration: none;
+}
 
-  .logo-mark {
-    width: 36px;
-    height: 36px;
-    background: $gradient;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: $font-head;
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: #fff;
-    box-shadow: 0 0 20px rgba(29, 106, 255, 0.45);
-    flex-shrink: 0;
-    letter-spacing: -0.03em;
-  }
+.logo-wordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
 
-  .logo-text {
-    font-family: $font-head;
-    font-weight: 700;
-    font-size: 1.3rem;
-    color: $text;
-    letter-spacing: -0.03em;
+.logo-text {
+  font-family: $font-head;
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: $text;
+  letter-spacing: -0.045em;
+  line-height: 1;
 
-    // "Pay" in brand blue — matches the wordmark exactly
-    .logo-pay { color: $brand-blue; }
-  }
+  .logo-pay { color: $brand-blue; }
+}
+
+.logo-tagline {
+  font-family: $font-head;
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $text-dim;
+  line-height: 1;
+
+  .logo-tagline-hl { color: $violet; }
+
+  @media (max-width: 768px) { display: none; }
 }
 
 // ── Nav ──────────────────────────────────────────────────────────────────────
